@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A CSS cheatsheet for getting familiar with Flexbox</title>
+        <link href="styles.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>A CSS cheatsheet for getting familiar with Flexbox</h1>
+            <p>To extend this challenge, this website's css layout will be rebuilt using what was learned
+                about flexbox after the cheat-sheet is complete!</p>
+        </header>
+        <section>
+            <h2>What is flexbox?</h2> 
+                <p>CSS Flexbox is a layout module that permits responsive, dynamic and flexible arrangement of elements without using float 
+                or positioning. </p>
+        </section>
+        <section>
+            <h2>How does flexbox work?</h2>
+                <p>To arrange elements using flexbox, elements are contained in a 'flex container'. The child elements within are called 
+                    'flex items', and these flex items are placed  along 'flex lines'.
+                    Lines and items can be manipulated in layout, size and spacing and more along the x and y axes using operators. 
+                    Elements can then arrange themselves automically in a responsive manner ('flexing'), allowing optimal utilisation of space.
+                    Operators in the flexbox module can act upon the parent container or its children.
+                </p>
+        </section>
+        <section>
+            <h2>When to use Flexbox</h2>
+            <p>Flexbox is not recommended for building whole webpages (larger layouts may instead use Grid), but it is appropriate for
+            small-scale layouts and applications e.g. nav menus, web forms. Fox example, the image below may be more useful represented 
+        alongside the first table; while this is tricky to do with float positioning, flexbox should make this a breeze.</p>
+        </section>
+
+        <img src="https://www.wpquestions.org/wp-content/uploads/2020/02/css-flexbox-schematic-1024x424-1.jpg" alt="a schematic of flexbox terms" width="587" height="243">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">
+                        <h1>Flexbox Concepts & Terminology</h1>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <h2 class="columnleft">Term</h2>
+                    </th>
+                    <th>
+                        <h2>Concept</h2>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="term">main axis</span>
+                    </td>
+                    <td>The axis on which flex items are laid out. Can be vertical or horizontal, 
+                        depending on the <span class="code">flex-direction</span> property.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="term">main-start, main-end, cross-start, cross-end</span>
+                    </td>
+                    <td>Represent the start and end points of where items are arranged</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="term">main size, cross size</span>
+                    </td>
+                    <td>Denotes either the width or height of the flex items, depending on orientation of main axis.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="term">cross axis</span>
+                    </td>
+                    <td>The axis perpendicular to the main axis.</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="4">
+                        <h1>Flexbox Properties</h1>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <h2 class="columnleft">Property</h2>
+                    </th>
+                    <th>
+                        <h2>Description</h2>
+                    </th>
+                    <th>
+                        <h2>Options</h2>
+                    </th>
+                    <th>
+                        <h2>Description</h2>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="4">
+                        <span class="code">flex-direction</span>
+                    </td>
+                    <td rowspan="4">Defines the main axis and therefore which direction the flex items are placed. Permits changing the order 
+                        of items independently of where they are in the html.<br><span class="code">Flex-flow</span><strong> is used as shorthand for this property.
+                    </strong>
+                    </td>
+                    <td>
+                        <span class="code">row</span>
+                    </td>
+                    <td>By default; arranges items left to right.</td>
+                </tr>
+                <tr>
+                    <td><span class="code">row-reverse</span></td>
+                    <td>Arranges items right to left.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="code">column</span>
+                    </td>
+                    <td>Items arranged top to bottom.</td>
+                </tr>
+                <tr>
+                    <td><span class="code">column-reverse</span></td>
+                    <td>Displays items bottom to top.</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">
+                        <span class="code">flex-wrap</span>
+                    </td>
+                    <td rowspan="3">This property permits specification of how items will be organised in a flex container. <br><span class="code">Flex-flow</span><strong> is used as shorthand for this property.
+                    </strong>
+                    </td>
+                    <td>
+                        <span class="code">nowrap</span>
+                    </td>
+                    <td> The default value; places all items in a row along one line within the flex container.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="code">wrap</span>
+                    </td>
+                    <td>If there are too many items to fit along a single line, this option will arrange items over multiple lines, from
+                        top to bottom.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="code">wrap-reverse</span>
+                    </td>
+                    <td>As wrap, but arranged bottom to top.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="code">flex-flow</span>
+                    </td>
+                    <td colspan="3">
+                        Shorthand for <span class="code">flex-direction</span> and <span class="code">flex-wrap</span>. Allows both the main axes of the container to be defined; default values
+                        are <span class="code">row nowrap</span>.
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="7">
+                        <span class="code">justify-content</span>
+                    </td>
+                    <td rowspan="7">Defines item alignment on the main axis. Controls what happens with any available free space. Has some control over
+                        alignment when items get wider than their container. Browser support for these values is not consistent so be wary.
+                    </td>
+                    <td>
+                        <span class="code">flex-start, flex-end</span>
+                    </td>
+                    <td>Default. Items align towards the front / end of <span class="code">flex-direction</span>respectively.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="code">start</span>
+                    </td>
+                    <td>Defines the beginning of <span class="code">writing-mode</span> as the starting point, or moves items towards the end of
+                    it.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="code">left, right</span>
+                    </td>
+                    <td>Aligns flex items towards left / right edge of container, or will order items like <span class="code">start</span>
+                    depending on the specification of <span class="code">flex-direction</span></td>
+                </tr>
+                <tr><td>
+                        <span class="code">center</span>
+                    </td>
+                <td>Will order items horizontally.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="code">space-between</span>
+                    </td>
+                    <td>Items will be distributed evenly within the container. The first towards the start, the last towards the end and 
+                        even space between each item.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="code">space-around</span>
+                    </td>
+                    <td>Items are evenly spaced with the same amount of space around each item (double the space between items).
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="code">space-evenly</span>
+                    </td>
+                    <td>Items sit evenly spaced within the container but the spacing between each item, and towards the container edges is
+                        even.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+    <footer>
+        <p>This website was designed to satisfy the 'Build Your Own Cheatsheet' challenge, as part of <a href="codecademy.com">Codecademy</a>'s Full-stack Developer course.
+            The above information was sourced / adapted from <a href="https://www.wpquestions.org/a-css-flexbox-tutorial-for-beginners-what-it-is-and-how-to-use-it/">
+            WordPress Experts</a>, <a href="https://www.w3schools.com/csS/css3_flexbox.asp">w3schools</a> and <a href="https://www.w3.org/TR/css-flexbox/#intro">
+            W3C</a>.    
+        </p>
+    </footer>
+</html>
+
